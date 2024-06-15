@@ -4,7 +4,7 @@
 
 This is the official repo for the paper "On Fairness of Low-Rank Adaptation of Large Models". Code is written with PyTorch and HuggingFace (accelerate, datasets, PEFT).
 
-Authors: [Zhoujie Ding](https://jasonding0401.github.io/)*, [Ken Ziyu Liu](https://ai.stanford.edu/~kzliu)*, [Pura Peetathawatchai](https://poonpura.github.io/), [Berivan Isik](https://sites.google.com/view/berivanisik), [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/).
+Authors: [Zhoujie Ding](https://jasonding0401.github.io/)\*, [Ken Ziyu Liu](https://ai.stanford.edu/~kzliu)\*, [Pura Peetathawatchai](https://poonpura.github.io/), [Berivan Isik](https://sites.google.com/view/berivanisik), [Sanmi Koyejo](https://cs.stanford.edu/~sanmi/).
 
 - Paper: https://arxiv.org/abs/2405.17512,
 - Paper summary [tweet thread](https://x.com/kenziyuliu/status/1796608738285191668)
