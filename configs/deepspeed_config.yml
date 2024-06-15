@@ -1,0 +1,53 @@
+## Stage 2, runs smooth and fast and the highest stage compatible with PEFT
+compute_environment: LOCAL_MACHINE
+debug: false
+deepspeed_config:
+  gradient_accumulation_steps: 'auto'
+  # gradient_accumulation_steps: 1   # UTKFace
+  offload_optimizer_device: none
+  offload_param_device: none
+  zero3_init_flag: false
+  zero_stage: 2
+distributed_type: DEEPSPEED
+downcast_bf16: 'no'
+dynamo_config:
+  dynamo_backend: INDUCTOR
+machine_rank: 0
+main_training_function: main
+# mixed_precision: fp16
+mixed_precision: bf16
+num_machines: 1
+num_processes: 4
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false
+
+
+## Stage 3, deprecated
+
+# compute_environment: LOCAL_MACHINE
+# debug: false
+# deepspeed_config:
+#   gradient_accumulation_steps: 2
+#   offload_optimizer_device: none
+#   offload_param_device: none
+#   zero3_init_flag: false
+#   zero3_save_16bit_model: false
+#   zero_stage: 3
+# distributed_type: DEEPSPEED
+# downcast_bf16: 'no'
+# machine_rank: 0
+# main_training_function: main
+# mixed_precision: fp16   # for mercury1/2 which has old GPUs
+# num_machines: 1
+# # num_processes: 10   # for mercury1/2
+# num_processes: 5
+# rdzv_backend: static
+# same_network: true
+# tpu_env: []
+# tpu_use_cluster: false
+# tpu_use_sudo: false
+# use_cpu: false

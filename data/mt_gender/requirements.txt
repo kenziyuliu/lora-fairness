@@ -1,0 +1,5 @@
+google-cloud
+docopt
+gcloud
+google-cloud-translate
+# gcloud cli https://cloud.google.com/sdk/docs/install#linux

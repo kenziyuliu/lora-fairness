@@ -1,0 +1,10 @@
+stash/
+prefiltered_data/
+logs/
+**/*.pyc
+**/*.log
+**/.DS_Store
+outputs/
+plots/
+cache/
+calibration_plots/

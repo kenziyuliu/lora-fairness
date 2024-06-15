@@ -1,0 +1,180 @@
+
+imdb:
+  task_type: classification
+  seq_length: 1024
+
+ethos:
+  task_type: classification
+  # Using llama2 tokenizer
+  # For binary dataset:
+  # - seq_length=512 truncates only 1 example
+  # - seq_length=256 truncates only 4 example (good default)
+  # - seq_length=128 truncates only 19 example
+  # For multilabel dataset:
+  # - seq_length=512 truncates only 1 example
+  # - seq_length=256 truncates only 2 example (good default)
+  # - seq_length=128 truncates only 5 example
+  seq_length: 256
+
+dlab_hatespeech_race:
+  task_type: classification
+  # From `seq_length_analysis.py`:
+  # ds_name='dlab_race'
+  # Dataset size: 11670
+  # Number of positive examples: 2954
+  # Number of negative examples: 8716
+  # Total number of tokens: 480879
+  # Average seq length: 41.20642673521851
+  # Max seq length: 276
+  # Min seq length: 3
+  # 95% percentile: 98.0
+  # 99% percentile: 138.0
+  # 99.5% percentile: 146.65500000000065
+  # 99.9% percentile: 174.64100000002145
+  # 99.99% percentile: 260.6647999999841
+  # Fraction of seqs longer than 128: 1.6023993144815767%
+  # Fraction of seqs longer than 256: 0.01713796058269066%
+  # Fraction of seqs longer than 512: 0.0%
+  # Fraction of seqs longer than 1024: 0.0%
+  seq_length: 256
+
+dlab_hatespeech_religion:
+  task_type: classification
+  # ds_name='dlab_religion'
+  # Dataset size: 6081
+  # Number of positive examples: 1303
+  # Number of negative examples: 4778
+  # Total number of tokens: 284217
+  # Average seq length: 46.738529847064626
+  # Max seq length: 202
+  # Min seq length: 4
+  # 95% percentile: 106.0
+  # 99% percentile: 142.0
+  # 99.5% percentile: 148.60000000000036
+  # 99.9% percentile: 169.0
+  # 99.99% percentile: 197.1359999999986
+  # Fraction of seqs longer than 128: 2.1871402729814178%
+  # Fraction of seqs longer than 256: 0.0%
+  # Fraction of seqs longer than 512: 0.0%
+  # Fraction of seqs longer than 1024: 0.0%
+  seq_length: 256
+
+dlab_hatespeech_age:
+  task_type: classification
+  # ds_name='dlab_age'
+  # Dataset size: 957
+  # Number of positive examples: 201
+  # Number of negative examples: 756
+  # Total number of tokens: 39019
+  # Average seq length: 40.77220480668757
+  # Max seq length: 161
+  # Min seq length: 3
+  # 95% percentile: 99.19999999999993
+  # 99% percentile: 136.0
+  # 99.5% percentile: 148.44000000000005
+  # 99.9% percentile: 153.35200000000077
+  # 99.99% percentile: 160.23519999999917
+  # Fraction of seqs longer than 128: 1.671891327063741%
+  # Fraction of seqs longer than 256: 0.0%
+  # Fraction of seqs longer than 512: 0.0%
+  # Fraction of seqs longer than 1024: 0.0%
+  seq_length: 256
+
+dlab_hatespeech_gender:
+  task_type: classification
+  # ds_name='dlab_gender'
+  # Dataset size: 13976
+  # Number of positive examples: 4129
+  # Number of negative examples: 9847
+  # Total number of tokens: 513361
+  # Average seq length: 36.73161133371494
+  # Max seq length: 228
+  # Min seq length: 3
+  # 95% percentile: 93.0
+  # 99% percentile: 132.0
+  # 99.5% percentile: 144.0
+  # 99.9% percentile: 164.07500000000437
+  # 99.99% percentile: 215.2549999999792
+  # Fraction of seqs longer than 128: 1.2736119061247853%
+  # Fraction of seqs longer than 256: 0.0%
+  # Fraction of seqs longer than 512: 0.0%
+  # Fraction of seqs longer than 1024: 0.0%
+  seq_length: 256
+
+dlab_hatespeech_sexuality:
+  task_type: classification
+  # ds_name='dlab_sexuality'
+  # Dataset size: 7297
+  # Number of positive examples: 2064
+  # Number of negative examples: 5233
+  # Total number of tokens: 297802
+  # Average seq length: 40.81156639714951
+  # Max seq length: 247
+  # Min seq length: 3
+  # 95% percentile: 107.0
+  # 99% percentile: 143.03999999999996
+  # 99.5% percentile: 150.51999999999953
+  # 99.9% percentile: 165.70400000000063
+  # 99.99% percentile: 214.1679999999742
+  # Fraction of seqs longer than 128: 2.274907496231328%
+  # Fraction of seqs longer than 256: 0.0%
+  # Fraction of seqs longer than 512: 0.0%
+  # Fraction of seqs longer than 1024: 0.0%
+  seq_length: 256
+
+dlab_hatespeech_all:
+  task_type: classification
+  # ds_name='dlab_all'
+  # Dataset size: 39565
+  # Number of positive examples: 10354
+  # Number of negative examples: 29211
+  # Total number of tokens: 1585111
+  # Average seq length: 40.063465183874634
+  # Max seq length: 276
+  # Min seq length: 3
+  # 95% percentile: 98.0
+  # 99% percentile: 137.0
+  # 99.5% percentile: 147.0
+  # 99.9% percentile: 169.0
+  # 99.99% percentile: 252.08719999999448
+  # Fraction of seqs longer than 128: 1.6277012511057751%
+  # Fraction of seqs longer than 256: 0.007582459244281562%
+  # Fraction of seqs longer than 512: 0.0%
+  # Fraction of seqs longer than 1024: 0.0%
+  seq_length: 256
+
+utkface_age:
+  task_type: img_classification
+  num_classes: 9   # see data_utils.py
+  seq_length: -1   # seq length set by the model
+
+utkface_gender:
+  # TODO: specify that this is a multi-class classification
+  # so the metrics, etc. need to change accordingly
+  task_type: img_classification
+  num_classes: 2
+  seq_length: -1   # seq length set by the model
+
+yelp_review:
+  task_type: generation
+  seq_length: 256
+
+yelp_review_classification:
+  task_type: generation # the model is still with language modeling head
+  seq_length: 256 # larger because we do it example wise instead of grouping
+
+mt_gender_translation_general:
+  task_type: translation
+  seq_length: 128 # the longest sequence in the dataset is 107
+
+mt_gender_translation_general_test: # test only
+  task_type: translation
+  seq_length: 128
+
+mt_gender_translation_pro:
+  task_type: translation
+  seq_length: 128 # the longest sequence in the dataset is 107
+
+mt_gender_translation_anti:
+  task_type: translation
+  seq_length: 128 # the longest sequence in the dataset is 107

@@ -1,0 +1,25 @@
+## Use Stage 3 works for distributed inference 
+# since only ZeRO-3 performs sharding of parameters
+
+compute_environment: LOCAL_MACHINE
+debug: false
+deepspeed_config:
+  gradient_accumulation_steps: 'auto'  # no gradient accumulation for inference
+  offload_optimizer_device: none
+  offload_param_device: none
+  zero3_init_flag: false
+  zero3_save_16bit_model: false
+  zero_stage: 3 # we can use stage 1,2 because the entire model can fit in one GPU
+distributed_type: DEEPSPEED
+downcast_bf16: 'no'
+machine_rank: 0
+main_training_function: main
+mixed_precision: fp16   # for mercury1/2 which has old GPUs
+num_machines: 1
+num_processes: 4   # for mercury1/2
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false
